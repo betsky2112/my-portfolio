@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import {ThemeProvider} from '@/components/theme/theme-provider'
+import {ScrollToTopButton} from '@/components/ui/scroll-to-top'
 
 const inter = Inter({subsets: ['latin']})
 
@@ -72,6 +73,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 					<Navbar />
 					<main className="flex-grow">{children}</main>
 					<Footer />
+					<ScrollToTopButton />
 				</ThemeProvider>
 			</body>
 		</html>
