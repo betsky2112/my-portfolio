@@ -13,28 +13,59 @@ import {Input} from '@/components/ui/input'
 import {Textarea} from '@/components/ui/textarea'
 import {useForm} from 'react-hook-form'
 import {useState} from 'react'
+import {AnimatedSection} from '@/components/ui/animated-section'
+
+interface FormValues {
+	name: string
+	email: string
+	message: string
+}
 
 export default function Contact() {
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [isSubmitted, setIsSubmitted] = useState(false)
+	const [error, setError] = useState<string | null>(null)
 
 	const {
 		register,
 		handleSubmit,
 		formState: {errors},
-	} = useForm()
+		reset,
+	} = useForm<FormValues>()
 
-	const onSubmit = async (data: any) => {
+	const onSubmit = async (data: FormValues) => {
 		setIsSubmitting(true)
+		setError(null)
 
-		// Simulasi pengiriman formulir
-		await new Promise((resolve) => setTimeout(resolve, 1000))
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			})
 
-		// Dalam implementasi nyata, Anda akan mengirim data ke API
-		console.log(data)
+			const result = await response.json()
 
-		setIsSubmitting(false)
-		setIsSubmitted(true)
+			if (!response.ok) {
+				throw new Error(
+					result.error || 'Terjadi kesalahan saat mengirim pesan'
+				)
+			}
+
+			setIsSubmitted(true)
+			reset()
+		} catch (err) {
+			console.error('Error sending message:', err)
+			setError(
+				err instanceof Error
+					? err.message
+					: 'Terjadi kesalahan saat mengirim pesan'
+			)
+		} finally {
+			setIsSubmitting(false)
+		}
 	}
 
 	return (
@@ -43,7 +74,7 @@ export default function Contact() {
 			className="py-16 bg-muted/50"
 		>
 			<div className="container px-4 md:px-6">
-				<div className="flex flex-col items-center justify-center space-y-4 text-center">
+				<AnimatedSection className="flex flex-col items-center justify-center space-y-4 text-center">
 					<div className="space-y-2">
 						<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
 							Hubungi Saya
@@ -53,9 +84,12 @@ export default function Contact() {
 							saya akan segera merespon.
 						</p>
 					</div>
-				</div>
+				</AnimatedSection>
 
-				<div className="mx-auto max-w-md mt-8">
+				<AnimatedSection
+					delay={1}
+					className="mx-auto max-w-md mt-8"
+				>
 					<Card>
 						<CardHeader>
 							<CardTitle>Formulir Kontak</CardTitle>
@@ -133,6 +167,11 @@ export default function Contact() {
 											</span>
 										)}
 									</div>
+									{error && (
+										<p className="text-red-500 text-sm">
+											{error}
+										</p>
+									)}
 									<Button
 										type="submit"
 										className="w-full"
@@ -163,10 +202,13 @@ export default function Contact() {
 							)}
 						</CardContent>
 					</Card>
-				</div>
+				</AnimatedSection>
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-					<div className="flex flex-col items-center space-y-2 text-center">
+					<AnimatedSection
+						delay={2}
+						className="flex flex-col items-center space-y-2 text-center"
+					>
 						<div className="p-3 rounded-full bg-primary/10">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -187,8 +229,11 @@ export default function Contact() {
 						<p className="text-muted-foreground">
 							info@namaanda.com
 						</p>
-					</div>
-					<div className="flex flex-col items-center space-y-2 text-center">
+					</AnimatedSection>
+					<AnimatedSection
+						delay={3}
+						className="flex flex-col items-center space-y-2 text-center"
+					>
 						<div className="p-3 rounded-full bg-primary/10">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -209,8 +254,11 @@ export default function Contact() {
 						<p className="text-muted-foreground">
 							+62 123 4567 890
 						</p>
-					</div>
-					<div className="flex flex-col items-center space-y-2 text-center">
+					</AnimatedSection>
+					<AnimatedSection
+						delay={4}
+						className="flex flex-col items-center space-y-2 text-center"
+					>
 						<div className="p-3 rounded-full bg-primary/10">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +284,7 @@ export default function Contact() {
 						<p className="text-muted-foreground">
 							Jakarta, Indonesia
 						</p>
-					</div>
+					</AnimatedSection>
 				</div>
 			</div>
 		</section>
