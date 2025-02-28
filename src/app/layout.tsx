@@ -3,6 +3,7 @@ import {Inter} from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import {ThemeProvider} from '@/components/theme/theme-provider'
 
 const inter = Inter({subsets: ['latin']})
 
@@ -16,11 +17,19 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 		<html
 			lang="id"
 			className="scroll-smooth"
+			suppressHydrationWarning
 		>
 			<body className={`${inter.className} min-h-screen flex flex-col`}>
-				<Navbar />
-				<main className="flex-grow">{children}</main>
-				<Footer />
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
+					<Navbar />
+					<main className="flex-grow">{children}</main>
+					<Footer />
+				</ThemeProvider>
 			</body>
 		</html>
 	)
