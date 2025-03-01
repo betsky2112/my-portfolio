@@ -1,34 +1,61 @@
-import {NextRequest, NextResponse} from 'next/server'
+import {NextResponse} from 'next/server'
+import nodemailer from 'nodemailer'
 
-export async function POST(request: NextRequest) {
+export async function POST(request: Request) {
 	try {
-		const data = await request.json()
+		// Ambil data dari request body
+		const body = await request.json()
+		const {name, email, message} = body
 
-		const {name, email, message} = data
-
+		// Validasi data
 		if (!name || !email || !message) {
 			return NextResponse.json(
-				{error: 'Semua field wajib diisi'},
+				{error: 'Semua field harus diisi'},
 				{status: 400}
 			)
 		}
 
-		// Di implementasi nyata, Anda dapat:
-		// 1. Menyimpan pesan ke database
-		// 2. Mengirim email notifikasi
-		// 3. Integrasi dengan layanan pihak ketiga seperti Mailchimp, SendGrid dll.
+		// Konfigurasi transporter email
+		const transporter = nodemailer.createTransport({
+			host: process.env.EMAIL_HOST,
+			port: Number(process.env.EMAIL_PORT) || 587,
+			secure: process.env.EMAIL_SECURE === 'true',
+			auth: {
+				user: process.env.EMAIL_USER,
+				pass: process.env.EMAIL_PASS,
+			},
+		})
 
-		console.log('Pesan diterima:', {name, email, message})
+		// Membuat konten email
+		const mailOptions = {
+			from: process.env.EMAIL_USER,
+			to: process.env.EMAIL_RECIPIENT || process.env.EMAIL_USER, // Email tujuan
+			replyTo: email, // Pengirim bisa langsung dibalas ke email pengirim form
+			subject: `Pesan Website Portfolio dari ${name}`,
+			text: `
+        Nama: ${name}
+        Email: ${email}
+        Pesan: ${message}
+      `,
+			html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2>Pesan Baru dari Website Portfolio</h2>
+          <p><strong>Nama:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Pesan:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+        </div>
+      `,
+		}
 
-		// Simulasi pengiriman pesan berhasil
-		return NextResponse.json(
-			{success: true, message: 'Pesan berhasil dikirim'},
-			{status: 200}
-		)
+		// Kirim email
+		await transporter.sendMail(mailOptions)
+
+		return NextResponse.json({success: true, message: 'Pesan terkirim!'})
 	} catch (error) {
-		console.error('Error:', error)
+		console.error('Error sending email:', error)
 		return NextResponse.json(
-			{error: 'Terjadi kesalahan server'},
+			{error: 'Terjadi kesalahan saat mengirim email'},
 			{status: 500}
 		)
 	}

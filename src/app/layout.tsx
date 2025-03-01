@@ -9,9 +9,9 @@ import {ScrollToTopButton} from '@/components/ui/scroll-to-top'
 const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
-	title: 'Portfolio Profesional | Nama Anda',
+	title: 'Portfolio Profesional | Robert Siagian',
 	description:
-		'Website portfolio yang menampilkan karya dan keahlian Nama Anda sebagai web developer profesional dengan pengalaman lebih dari 100 proyek',
+		'Website portfolio yang menampilkan karya dan keahlian Robert Siagian sebagai web developer profesional dengan pengalaman lebih dari 1 tahun',
 	keywords: [
 		'web developer',
 		'portfolio',
@@ -22,30 +22,30 @@ export const metadata: Metadata = {
 		'frontend',
 		'backend',
 	],
-	authors: [{name: 'Nama Anda', url: 'https://namaanda.com'}],
-	creator: 'Nama Anda',
+	authors: [{name: 'Robert Siagian', url: 'https://betsky.me'}],
+	creator: 'Robert Siagian',
 	openGraph: {
 		type: 'website',
 		locale: 'id_ID',
-		url: 'https://www.namaanda.com',
-		title: 'Portfolio Profesional | Nama Anda',
+		url: 'https://betsky.me',
+		title: 'Portfolio Profesional | Robert Siagian',
 		description:
-			'Website portfolio yang menampilkan karya dan keahlian Nama Anda sebagai web developer profesional',
-		siteName: 'Portfolio Nama Anda',
+			'Website portfolio yang menampilkan karya dan keahlian Robert Siagian sebagai web developer profesional',
+		siteName: 'Portfolio Robert Siagian',
 		images: [
 			{
 				url: '/images/og-image.jpg',
 				width: 1200,
 				height: 630,
-				alt: 'Portfolio Profesional Nama Anda',
+				alt: 'Portfolio Profesional Robert Siagian',
 			},
 		],
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Portfolio Profesional | Nama Anda',
+		title: 'Portfolio Profesional | Robert Siagian',
 		description:
-			'Website portfolio yang menampilkan karya dan keahlian Nama Anda sebagai web developer profesional',
+			'Website portfolio yang menampilkan karya dan keahlian Robert Siagian sebagai web developer profesional',
 		creator: '@username_anda',
 		images: ['/images/og-image.jpg'],
 	},

@@ -8,7 +8,6 @@ import {Input} from '@/components/ui/input'
 import {
 	Github,
 	Linkedin,
-	Twitter,
 	Instagram,
 	Mail,
 	ArrowRight,
@@ -93,16 +92,16 @@ export default function Footer() {
 					</div>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+				<div className="ml-5 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
 					<div className="md:col-span-1">
 						<div className="space-y-4">
 							<h3 className="font-bold text-2xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-								Nama Anda
+								Robert Siagian
 							</h3>
 							<p className="text-muted-foreground">
 								Web developer profesional dengan pengalaman
-								lebih dari 100 proyek yang sukses membantu
-								bisnis tumbuh secara digital.
+								lebih dari 1 tahun yang sukses membantu bisnis
+								tumbuh secara digital.
 							</p>
 
 							<div className="flex gap-2">
@@ -113,7 +112,7 @@ export default function Footer() {
 									className="rounded-full"
 								>
 									<a
-										href="https://github.com/yourusername"
+										href="https://github.com/betsky2112"
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label="GitHub"
@@ -128,7 +127,7 @@ export default function Footer() {
 									className="rounded-full"
 								>
 									<a
-										href="https://linkedin.com/in/yourusername"
+										href="https://linkedin.com/in/robertsiagian21"
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label="LinkedIn"
@@ -143,22 +142,7 @@ export default function Footer() {
 									className="rounded-full"
 								>
 									<a
-										href="https://twitter.com/yourusername"
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label="Twitter"
-									>
-										<Twitter className="h-4 w-4" />
-									</a>
-								</Button>
-								<Button
-									variant="outline"
-									size="icon"
-									asChild
-									className="rounded-full"
-								>
-									<a
-										href="https://instagram.com/yourusername"
+										href="https://instagram.com/aku_obet"
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label="Instagram"
@@ -170,7 +154,7 @@ export default function Footer() {
 						</div>
 					</div>
 
-					<div className="md:col-span-1">
+					<div className="md:col-span-1 ml-12">
 						<h3 className="font-bold text-lg mb-4">Tautan Cepat</h3>
 						<ul className="space-y-3">
 							<li>
@@ -208,7 +192,7 @@ export default function Footer() {
 						</ul>
 					</div>
 
-					<div className="md:col-span-1">
+					{/* <div className="md:col-span-1">
 						<h3 className="font-bold text-lg mb-4">Media Sosial</h3>
 						<ul className="space-y-3">
 							<li>
@@ -252,7 +236,7 @@ export default function Footer() {
 								</a>
 							</li>
 						</ul>
-					</div>
+					</div> */}
 
 					<div className="md:col-span-1">
 						<h3 className="font-bold text-lg mb-4">Kontak</h3>
@@ -285,9 +269,9 @@ export default function Footer() {
 					</div>
 				</div>
 
-				<div className="mt-12 pt-6 border-t flex flex-col md:flex-row justify-between items-center gap-4">
+				<div className="ml-5 mt-12 pt-6 border-t flex flex-col md:flex-row justify-between items-center gap-4">
 					<p className="text-center md:text-left text-muted-foreground text-sm">
-						&copy; {currentYear} Nama Anda. Semua hak dilindungi.
+						&copy; {currentYear} betsky. Semua hak dilindungi.
 					</p>
 					<div className="flex items-center gap-4 text-sm text-muted-foreground">
 						<Link

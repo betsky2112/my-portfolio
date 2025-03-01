@@ -34,73 +34,42 @@ export default function Projects() {
 	const containerRef = useRef(null)
 	const isInView = useInView(containerRef, {once: true, amount: 0.2})
 
-	// Extended project list with categories and featured flag
 	const projects: Project[] = [
 		{
 			id: 1,
 			title: 'E-Commerce Platform',
 			description:
 				'Website e-commerce lengkap dengan pembayaran, manajemen produk, dashboard admin, dan integrasi multi-vendor.',
-			image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-			tags: ['Next.js', 'Tailwind CSS', 'Stripe', 'Prisma', 'PostgreSQL'],
+			image: '/images/E-Commerce Design.png',
+			tags: ['Next.js', 'Tailwind CSS', 'Prisma', 'PostgreSQL'],
 			link: 'https://example.com/project1',
-			github: 'https://github.com/betsky2112/ecommerce',
+			github: 'https://github.com/betsky2112/',
 			category: 'web',
 			featured: true,
 		},
 		{
 			id: 2,
-			title: 'Photography Portfolio',
+			title: 'Coffee Shop App',
 			description:
-				'Website portfolio yang elegan dan responsif untuk seorang fotografer profesional dengan galeri interaktif dan CMS.',
-			image: 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-			tags: ['React', 'Tailwind CSS', 'Framer Motion', 'Sanity.io'],
+				'Aplikasi pemesanan kopi dengan fitur pemesanan, pembayaran, notifikasi real-time, dan manajemen pesanan.',
+			image: '/images/Coffee App Design.png',
+			tags: ['Flutter', 'Firebase', 'Node.js', 'Material UI'],
 			link: 'https://example.com/project2',
-			github: 'https://github.com/betsky2112/photography-portfolio',
-			category: 'design',
+			github: 'https://github.com/betsky2112/',
+			category: 'mobile',
 			featured: true,
 		},
 		{
 			id: 3,
-			title: 'Dashboard Analytics',
+			title: 'Dashboard Admin',
 			description:
-				'Dashboard analitik dengan visualisasi data yang interaktif untuk bisnis dengan laporan real-time dan data prediktif.',
-			image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-			tags: ['Next.js', 'D3.js', 'Tailwind CSS', 'Supabase'],
+				'Aplikasi pemesanan kopi dengan fitur pemesanan, pembayaran, notifikasi real-time, dan manajemen pesanan.',
+			image: '/images/Dashboard Design.png',
+			tags: ['Next.js', 'Tailwind CSS', 'Node.js', 'Shadcn UI'],
 			link: 'https://example.com/project3',
-			category: 'data',
-			featured: true,
-		},
-		{
-			id: 4,
-			title: 'Social Media App',
-			description:
-				'Aplikasi media sosial dengan fitur posting, komentar, direct messaging, dan notifikasi real-time.',
-			image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-			tags: ['React Native', 'Firebase', 'Redux', 'Node.js'],
-			link: 'https://example.com/project4',
-			github: 'https://github.com/betsky2112/social-app',
-			category: 'mobile',
-		},
-		{
-			id: 5,
-			title: 'Learning Management System',
-			description:
-				'Platform pembelajaran online dengan kursus video, quiz, dan sertifikat untuk berbagai topik edukasi.',
-			image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-			tags: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-			link: 'https://example.com/project5',
+			github: 'https://github.com/betsky2112/',
 			category: 'web',
-		},
-		{
-			id: 6,
-			title: 'AI-Powered Chatbot',
-			description:
-				'Chatbot untuk customer support yang menggunakan machine learning untuk memahami dan merespon pertanyaan pelanggan.',
-			image: 'https://images.unsplash.com/photo-1535378620166-273708d44e4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-			tags: ['Python', 'TensorFlow', 'Flask', 'React'],
-			link: 'https://example.com/project6',
-			category: 'ai',
+			featured: true,
 		},
 	]
 
@@ -119,8 +88,6 @@ export default function Projects() {
 		{id: 'web', label: 'Web App'},
 		{id: 'mobile', label: 'Mobile'},
 		{id: 'design', label: 'UI/UX'},
-		{id: 'ai', label: 'AI/ML'},
-		{id: 'data', label: 'Data'},
 	]
 
 	return (
@@ -355,9 +322,9 @@ export default function Projects() {
 						</Button>
 					</div>
 
-					<p className="text-muted-foreground text-sm mt-4">
+					{/* <p className="text-muted-foreground text-sm mt-4">
 						Ada lebih dari 30+ proyek yang telah saya kerjakan
-					</p>
+					</p> */}
 				</AnimatedSection>
 			</div>
 		</section>
