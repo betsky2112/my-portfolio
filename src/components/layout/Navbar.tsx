@@ -215,6 +215,8 @@ export default function Navbar() {
 						<SheetContent
 							side="right"
 							className="w-[250px] sm:w-[300px]"
+							title="Navigation Menu"
+							description="Main navigation options for the website"
 						>
 							<nav className="flex flex-col gap-4 mt-8">
 								<Link

@@ -226,7 +226,7 @@ export default function Contact() {
 						</div>
 						<h3 className="text-lg font-semibold">Email</h3>
 						<p className="text-muted-foreground">
-							info@namaanda.com
+							roberthussebastians@gmail.com
 						</p>
 					</AnimatedSection>
 					<AnimatedSection
@@ -251,7 +251,7 @@ export default function Contact() {
 						</div>
 						<h3 className="text-lg font-semibold">Telepon</h3>
 						<p className="text-muted-foreground">
-							+62 123 4567 890
+							+62 821 6807 9180
 						</p>
 					</AnimatedSection>
 					<AnimatedSection
