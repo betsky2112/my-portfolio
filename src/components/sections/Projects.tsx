@@ -15,14 +15,7 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs'
 import {AnimatedSection} from '@/components/ui/animated-section'
 import {motion, useInView} from 'framer-motion'
 import Image from 'next/image'
-import {
-	ArrowRight,
-	ExternalLink,
-	Github,
-	Code,
-	Eye,
-	Bookmark,
-} from 'lucide-react'
+import {ArrowRight, Github, Code, Eye, Bookmark} from 'lucide-react'
 
 interface Project {
 	id: number

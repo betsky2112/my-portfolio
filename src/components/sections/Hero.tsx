@@ -7,12 +7,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import {motion, useAnimation} from 'framer-motion'
 import {Parallax} from 'react-parallax'
-import {
-	ChevronDown,
-	Github,
-	Linkedin,
-	Twitter,
-} from 'lucide-react'
+import {ChevronDown, Github, Linkedin, Twitter} from 'lucide-react'
 import {TypeAnimation} from 'react-type-animation'
 import {Badge} from '@/components/ui/badge'
 
@@ -52,24 +47,6 @@ const SocialLinks = () => {
 }
 
 // Floating badge component
-const FloatingSkillBadge = ({children, icon: Icon, delay, x, y}) => {
-	return (
-		<motion.div
-			className="absolute hidden md:flex items-center"
-			initial={{opacity: 0, y: 20}}
-			animate={{opacity: 1, y: 0}}
-			transition={{delay, duration: 0.5}}
-			style={{left: `${x}%`, top: `${y}%`}}
-		>
-			<Badge
-				variant="secondary"
-				className="flex items-center gap-1 px-3 py-1 shadow-lg bg-background/80 backdrop-blur"
-			>
-				{Icon && <Icon className="h-3 w-3" />} {children}
-			</Badge>
-		</motion.div>
-	)
-}
 
 export default function Hero() {
 	const [mousePosition, setMousePosition] = useState({x: 0, y: 0})
@@ -112,40 +89,6 @@ export default function Hero() {
 			{/* Animated Blobs */}
 			<div className="absolute top-48 right-5 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-blob"></div>
 			<div className="absolute bottom-24 left-12 w-72 h-72 bg-secondary/10 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
-
-			{/* Floating skill badges */}
-			{/* <FloatingSkillBadge
-				icon={Layout}
-				delay={1.2}
-				x={15}
-				y={30}
-			>
-				React
-			</FloatingSkillBadge>
-			<FloatingSkillBadge
-				icon={Code}
-				delay={1.5}
-				x={75}
-				y={40}
-			>
-				Next.js
-			</FloatingSkillBadge>
-			<FloatingSkillBadge
-				icon={Database}
-				delay={1.8}
-				x={25}
-				y={70}
-			>
-				MongoDB
-			</FloatingSkillBadge>
-			<FloatingSkillBadge
-				icon={PenTool}
-				delay={2.1}
-				x={70}
-				y={65}
-			>
-				Tailwind CSS
-			</FloatingSkillBadge> */}
 
 			<div className="container relative z-10 px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-12">
 				{/* Left content */}
