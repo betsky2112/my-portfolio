@@ -154,7 +154,7 @@ export default function Footer() {
 						</div>
 					</div>
 
-					<div className="md:col-span-1 ml-12">
+					<div className="md:col-span-1">
 						<h3 className="font-bold text-lg mb-4">Tautan Cepat</h3>
 						<ul className="space-y-3">
 							<li>
