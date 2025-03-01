@@ -8,7 +8,6 @@ import {Input} from '@/components/ui/input'
 import {
 	Github,
 	Linkedin,
-	Twitter,
 	Instagram,
 	Mail,
 	ArrowRight,
