@@ -41,18 +41,10 @@ export const metadata: Metadata = {
 			},
 		],
 	},
-	twitter: {
-		card: 'summary_large_image',
-		title: 'Portfolio Profesional | Robert Siagian',
-		description:
-			'Website portfolio yang menampilkan karya dan keahlian Robert Siagian sebagai web developer profesional',
-		creator: '@username_anda',
-		images: ['/images/og-image.jpg'],
-	},
 	icons: {
-		icon: '/favicon.ico',
-		shortcut: '/favicon-16x16.png',
-		apple: '/apple-touch-icon.png',
+		icon: '/facicon/favicon.ico',
+		shortcut: '/favicon/favicon-16x16.png',
+		apple: '/favicon/apple-touch-icon.png',
 	},
 }
 
