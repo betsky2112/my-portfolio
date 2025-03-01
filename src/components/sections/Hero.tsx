@@ -9,7 +9,6 @@ import {motion, useAnimation} from 'framer-motion'
 import {Parallax} from 'react-parallax'
 import {ChevronDown, Github, Linkedin, Twitter} from 'lucide-react'
 import {TypeAnimation} from 'react-type-animation'
-import {Badge} from '@/components/ui/badge'
 
 // Social media links component
 const SocialLinks = () => {
