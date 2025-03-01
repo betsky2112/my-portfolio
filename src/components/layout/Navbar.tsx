@@ -43,7 +43,7 @@ export default function Navbar() {
 			)}
 		>
 			<div className="container flex h-16 items-center justify-between">
-				<div className="font-bold text-2xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+				<div className="font-bold text-2xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent ml-5">
 					<Link
 						href="/"
 						className="flex items-center gap-2"
