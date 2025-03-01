@@ -1,22 +1,11 @@
 'use client'
 
 import {useEffect, useRef} from 'react'
-import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
 import {Card, CardContent} from '@/components/ui/card'
 import {Badge} from '@/components/ui/badge'
 import {AnimatedSection} from '@/components/ui/animated-section'
 import {motion, useAnimation, useInView} from 'framer-motion'
-import {
-	Calendar,
-	Code,
-	FileText,
-	GraduationCap,
-	Layers,
-	Briefcase,
-	User,
-	Heart,
-	Award,
-} from 'lucide-react'
+import {Calendar, GraduationCap, Briefcase, Heart, Award} from 'lucide-react'
 import Image from 'next/image'
 
 // Progress bar component

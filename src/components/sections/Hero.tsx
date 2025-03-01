@@ -9,10 +9,6 @@ import {motion, useAnimation} from 'framer-motion'
 import {Parallax} from 'react-parallax'
 import {
 	ChevronDown,
-	Code,
-	Layout,
-	Database,
-	PenTool,
 	Github,
 	Linkedin,
 	Twitter,
