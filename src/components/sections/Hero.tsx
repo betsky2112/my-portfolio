@@ -7,7 +7,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import {motion, useAnimation} from 'framer-motion'
 import {Parallax} from 'react-parallax'
-import {ChevronDown, Github, Linkedin, Twitter} from 'lucide-react'
+import {ChevronDown, Github, Linkedin} from 'lucide-react'
 import {TypeAnimation} from 'react-type-animation'
 
 // Social media links component
@@ -15,7 +15,7 @@ const SocialLinks = () => {
 	return (
 		<div className="flex items-center gap-3">
 			<a
-				href="https://github.com/yourusername"
+				href="https://github.com/betsky2112"
 				target="_blank"
 				rel="noreferrer"
 				className="bg-background/80 backdrop-blur p-2 rounded-full hover:bg-primary/10 transition-colors"
@@ -24,7 +24,7 @@ const SocialLinks = () => {
 				<Github className="h-5 w-5" />
 			</a>
 			<a
-				href="https://linkedin.com/in/yourusername"
+				href="https://linkedin.com/in/robertsiagian21"
 				target="_blank"
 				rel="noreferrer"
 				className="bg-background/80 backdrop-blur p-2 rounded-full hover:bg-primary/10 transition-colors"
@@ -32,20 +32,9 @@ const SocialLinks = () => {
 			>
 				<Linkedin className="h-5 w-5" />
 			</a>
-			<a
-				href="https://twitter.com/yourusername"
-				target="_blank"
-				rel="noreferrer"
-				className="bg-background/80 backdrop-blur p-2 rounded-full hover:bg-primary/10 transition-colors"
-				aria-label="Twitter"
-			>
-				<Twitter className="h-5 w-5" />
-			</a>
 		</div>
 	)
 }
-
-// Floating badge component
 
 export default function Hero() {
 	const [mousePosition, setMousePosition] = useState({x: 0, y: 0})
@@ -124,12 +113,8 @@ export default function Hero() {
 							transition={{duration: 0.8, delay: 0.3}}
 						>
 							Web Developer Full Stack dengan spesialisasi dalam
-							membangun aplikasi modern dan
-							<span className="text-primary font-medium">
-								{' '}
-								pengalaman lebih dari 100 proyek
-							</span>
-							. Mahir dalam Next.js, React, dan Tailwind CSS.
+							membangun aplikasi modern. Mahir dalam Next.js,
+							React, dan Tailwind CSS.
 						</motion.p>
 					</AnimatedSection>
 
@@ -183,7 +168,7 @@ export default function Hero() {
 							<div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30 animate-pulse"></div>
 							<div className="relative h-[280px] w-[280px] md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px] overflow-hidden rounded-full border-4 border-background">
 								<Image
-									src="https://images.unsplash.com/photo-1618641986557-1ecd230959aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+									src="/images/profile.png"
 									alt="Betsky2112 - Web Developer"
 									fill
 									className="object-cover"

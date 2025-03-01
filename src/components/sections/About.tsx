@@ -5,8 +5,16 @@ import {Card, CardContent} from '@/components/ui/card'
 import {Badge} from '@/components/ui/badge'
 import {AnimatedSection} from '@/components/ui/animated-section'
 import {motion, useAnimation, useInView} from 'framer-motion'
-import {Calendar, GraduationCap, Briefcase, Heart, Award} from 'lucide-react'
+import {
+	Calendar,
+	GraduationCap,
+	Briefcase,
+	Heart,
+	Award,
+	User,
+} from 'lucide-react'
 import Image from 'next/image'
+import {InstagramLogoIcon} from '@radix-ui/react-icons'
 
 interface SkillBarProps {
 	skill: string
@@ -89,28 +97,23 @@ export default function About() {
 	// Other skills as badges
 	const otherSkills = [
 		'JavaScript',
-		'GraphQL',
-		'MongoDB',
 		'PostgreSQL',
 		'Firebase',
 		'Redux',
 		'Express.js',
 		'REST API',
 		'Git',
-		'Docker',
 		'AWS',
-		'CI/CD',
-		'Jest',
 		'Figma',
 		'UI/UX Design',
 	]
 
 	// Achievements
 	const achievements = [
-		{icon: Briefcase, value: '100+', label: 'Proyek Selesai'},
-		{icon: Award, value: '15+', label: 'Penghargaan'},
-		{icon: Calendar, value: '5+', label: 'Tahun Pengalaman'},
-		{icon: Heart, value: '98%', label: 'Kepuasan Klien'},
+		{icon: Briefcase, value: '10+', label: 'Proyek Selesai'},
+		{icon: Award, value: '10+', label: 'Penghargaan'},
+		{icon: Calendar, value: '1+', label: 'Tahun Pengalaman'},
+		{icon: Heart, value: '95%', label: 'Kepuasan Klien'},
 	]
 
 	return (
@@ -151,39 +154,48 @@ export default function About() {
 
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 					{/* Profile column */}
-					<AnimatedSection className="lg:col-span-5 space-y-8">
+					<AnimatedSection className="lg:col-span-5 space-y-8 mb-60">
 						<div className="relative max-w-md mx-auto">
-							{/* Profile image with decorative elements */}
-							<div className="relative z-10 mx-auto rounded-xl overflow-hidden border-4 border-background shadow-2xl w-64 h-64 md:w-72 md:h-72">
-								<Image
-									src="https://images.unsplash.com/photo-1618641986557-1ecd230959aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
-									alt="Betsky2112 - Web Developer"
-									fill
-									className="object-cover"
-								/>
-							</div>
-
 							{/* Decorative elements */}
-							<div className="absolute top-0 right-0 -mt-4 -mr-4 z-0">
+							{/* <div className="absolute top-0 right-0 -mt-4 -mr-4 z-0">
 								<div className="w-24 h-24 rounded-lg bg-primary/20 backdrop-blur"></div>
-							</div>
+							</div> */}
 							<div className="absolute bottom-0 left-0 -mb-4 -ml-4 z-0">
 								<div className="w-24 h-24 rounded-lg bg-secondary/20 backdrop-blur"></div>
 							</div>
 
-							{/* Profile info card */}
-							<motion.div
-								className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-background/80 backdrop-blur shadow-lg rounded-full px-6 py-2 flex items-center space-x-2"
-								initial={{opacity: 0, y: 20}}
-								whileInView={{opacity: 1, y: 0}}
-								transition={{delay: 0.5}}
-								viewport={{once: true}}
+							{/* Profile image - using fixed height strategy for better mobile compatibility */}
+							<div className="relative z-10 mx-auto rounded-xl overflow-hidden border-4 border-background shadow-2xl w-64 h-64 md:w-72 md:h-72">
+								<div className="w-full h-full relative">
+									<Image
+										src="/images/profile-2.jpeg"
+										alt="Betsky2112 - Web Developer"
+										className="object-cover"
+										width={1200}
+										height={800}
+									/>
+								</div>
+							</div>
+
+							{/* Username tag - with improved mobile z-index handling */}
+							<div
+								className="relative w-full"
+								style={{zIndex: 50}}
 							>
-								{/* <User className="h-4 w-4 text-primary" /> */}
-								{/* <span className="text-sm font-medium">
-									@betsky2112
-								</span> */}
-							</motion.div>
+								<motion.div
+									className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-background/80 backdrop-blur shadow-lg rounded-full px-6 py-2 flex items-center space-x-2"
+									style={{zIndex: 50}}
+									initial={{opacity: 0, y: 20}}
+									whileInView={{opacity: 1, y: 0}}
+									transition={{delay: 0.5}}
+									viewport={{once: true}}
+								>
+									<InstagramLogoIcon className="h-4 w-4 text-primary" />
+									<span className="text-sm font-medium">
+										@aku_obet
+									</span>
+								</motion.div>
+							</div>
 						</div>
 
 						{/* Achievements */}
@@ -216,12 +228,12 @@ export default function About() {
 									<p className="text-muted-foreground leading-relaxed">
 										Halo! Saya{' '}
 										<span className="text-foreground font-medium">
-											Betsky2112
+											Robert Siagian
 										</span>
 										, seorang web developer full stack
-										dengan pengalaman lebih dari 5 tahun
+										dengan pengalaman lebih dari 1 tahun
 										dalam industri. Saya telah menyelesaikan
-										lebih dari 100 proyek untuk berbagai
+										lebih dari 10 proyek untuk berbagai
 										klien dari startup hingga perusahaan
 										besar.
 									</p>
@@ -245,8 +257,8 @@ export default function About() {
 												</span>
 											</div>
 											<p className="text-sm text-muted-foreground">
-												S1 Teknik Informatika,
-												Universitas Indonesia
+												S1 Computer Science, Binus
+												University
 											</p>
 										</div>
 										<div className="flex-1">
@@ -257,8 +269,8 @@ export default function About() {
 												</span>
 											</div>
 											<p className="text-sm text-muted-foreground">
-												Senior Web Developer, PT Digital
-												Kreasi
+												Staff Application Developer, PT
+												Prima Karya Sarana Sejahtera
 											</p>
 										</div>
 									</div>
