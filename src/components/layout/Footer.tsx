@@ -35,7 +35,7 @@ export default function Footer() {
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [])
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		// Handle newsletter subscription
 		console.log('Newsletter subscription:', email)

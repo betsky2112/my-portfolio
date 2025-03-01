@@ -52,7 +52,7 @@ export default function Hero() {
 	const controls = useAnimation()
 
 	// Handle mouse movement for parallax effect on the profile picture
-	const handleMouseMove = (e) => {
+	const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
 		const {clientX, clientY} = e
 		const moveX = (clientX - window.innerWidth / 2) / -20
 		const moveY = (clientY - window.innerHeight / 2) / -20
