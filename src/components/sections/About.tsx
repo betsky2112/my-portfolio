@@ -5,14 +5,7 @@ import {Card, CardContent} from '@/components/ui/card'
 import {Badge} from '@/components/ui/badge'
 import {AnimatedSection} from '@/components/ui/animated-section'
 import {motion, useAnimation, useInView} from 'framer-motion'
-import {
-	Calendar,
-	GraduationCap,
-	Briefcase,
-	Heart,
-	Award,
-	User,
-} from 'lucide-react'
+import {Calendar, GraduationCap, Briefcase, Heart, Award} from 'lucide-react'
 import Image from 'next/image'
 import {InstagramLogoIcon} from '@radix-ui/react-icons'
 
