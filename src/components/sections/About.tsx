@@ -8,8 +8,20 @@ import {motion, useAnimation, useInView} from 'framer-motion'
 import {Calendar, GraduationCap, Briefcase, Heart, Award} from 'lucide-react'
 import Image from 'next/image'
 
+interface SkillBarProps {
+	skill: string
+	level: number
+	delay?: number
+}
+
+interface AchievementCardProps {
+	icon: React.ElementType
+	value: string | number
+	label: string
+}
+
 // Progress bar component
-const SkillBar = ({skill, level, delay = 0}) => {
+const SkillBar = ({skill: skill, level, delay = 0}: SkillBarProps) => {
 	const controls = useAnimation()
 	const ref = useRef(null)
 	const inView = useInView(ref, {once: true})
@@ -48,7 +60,7 @@ const SkillBar = ({skill, level, delay = 0}) => {
 }
 
 // Achievement card component
-const AchievementCard = ({icon: Icon, value, label}) => {
+const AchievementCard = ({icon: Icon, value, label}: AchievementCardProps) => {
 	return (
 		<Card className="border-none shadow-lg bg-background/50 backdrop-blur-sm hover:bg-background/70 transition-all duration-300 hover:shadow-xl">
 			<CardContent className="p-5 flex flex-col items-center">
